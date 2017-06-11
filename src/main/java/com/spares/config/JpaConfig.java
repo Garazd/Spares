@@ -21,17 +21,17 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Profile("prod")
 public class JpaConfig {
 
-    @Value("${spring.datasource.driver-class-name}")
+    @Value("${datasource.driver.class.name}")
     private String driver;
-    @Value("${spring.datasource.url}")
+    @Value("${datasource.url}")
     private String url;
-    @Value("${spring.datasource.username}")
+    @Value("${datasource.username}")
     private String username;
-    @Value("${spring.datasource.password}")
+    @Value("${datasource.password}")
     private String password;
-    @Value("${spring.jpa.properties.hibernate.dialect}")
+    @Value("${jpa.hibernate.dialect}")
     private String dialect;
-    @Value("${spring.jpa.hibernate.ddl-auto}")
+    @Value("${jpa.hibernate.hbm2ddl.auto}")
     private String hbm2ddlAuto;
 
     @Resource
@@ -64,8 +64,8 @@ public class JpaConfig {
 
     @Bean
     public JpaTransactionManager transactionManager() {
-        JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
-        jpaTransactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
-        return jpaTransactionManager;
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
+        return transactionManager;
     }
 }
