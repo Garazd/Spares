@@ -11,3 +11,4 @@ target/
 .idea
 *.iml
 lib/
+/src/main/resources/application.properties
