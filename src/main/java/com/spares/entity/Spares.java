@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.util.Set;
-import java.util.UUID;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,7 +33,7 @@ public class Spares {
     @SequenceGenerator(name = "generator", sequenceName = "spares_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "generator")
     @Column(name = "spares_id", unique = true, nullable = false)
-    private UUID id;
+    private Long id;
 
     @Column(name = "name", nullable = false)
     private String name;

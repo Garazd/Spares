@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.util.Set;
-import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -32,7 +31,7 @@ public class Car {
     @SequenceGenerator(name = "generator", sequenceName = "car_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "generator")
     @Column(name = "car_id", unique = true, nullable = false)
-    private UUID id;
+    private Long id;
 
     @Column(name = "name", nullable = false)
     @NotEmpty
