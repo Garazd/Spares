@@ -4,7 +4,9 @@ import com.spares.entity.Spares;
 import com.spares.repository.SparesRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SparesServiceImpl implements SparesService {
 
     @Autowired
