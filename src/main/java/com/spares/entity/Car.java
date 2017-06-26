@@ -47,5 +47,5 @@ public class Car {
     private Double engineVolume;
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "car")
-    private Set<Spares> spares;
+    private Set<Spare> spares;
 }

@@ -27,7 +27,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Spares {
+public class Spare {
 
     @Id
     @SequenceGenerator(name = "generator", sequenceName = "spares_id_seq", allocationSize = 1)

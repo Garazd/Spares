@@ -24,7 +24,7 @@ public class CarController extends ExceptionHandlerController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public @ResponseBody
-    Map<String, Object> create(@RequestParam("car") Car car) throws RestException {
+    Map<String, Object> createCar(@RequestParam("car") Car car) throws RestException {
         try {
             if (car == null || car.equals("")) {
                 return Ajax.emptyResponse();
