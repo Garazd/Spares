@@ -16,7 +16,6 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "car")
@@ -34,7 +33,6 @@ public class Car {
     private Long id;
 
     @Column(name = "name", nullable = false)
-    @NotEmpty
     private String name;
 
     @Column(name = "model")
