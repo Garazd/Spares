@@ -13,7 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,7 +22,6 @@ import lombok.Setter;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @Getter
 @Setter
-@AllArgsConstructor
 public class Car {
 
     @Id
@@ -46,4 +44,15 @@ public class Car {
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "car")
     private Set<Spare> spares;
+
+    public Car() {
+    }
+
+    public Car(String name, String model, String engine, Double engineVolume, Set<Spare> spares) {
+        this.name = name;
+        this.model = model;
+        this.engine = engine;
+        this.engineVolume = engineVolume;
+        this.spares = spares;
+    }
 }

@@ -16,7 +16,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,7 +25,6 @@ import lombok.Setter;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @Getter
 @Setter
-@AllArgsConstructor
 public class Spare {
 
     @Id
@@ -49,4 +47,14 @@ public class Spare {
         joinColumns = @JoinColumn(name = "spares_id", nullable = false),
         inverseJoinColumns = @JoinColumn(name = "car_id", nullable = false))
     private Set<Car> cars;
+
+    public Spare() {
+    }
+
+    public Spare(String name, Long number, String description, Set<Car> cars) {
+        this.name = name;
+        this.number = number;
+        this.description = description;
+        this.cars = cars;
+    }
 }
